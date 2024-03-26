@@ -1,0 +1,199 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+Developing strategies for the bidding card game `Diamonds' with GenAI
+
+Introduction:
+
+``Diamonds'' introduces a blend of strategy and bidding, where players
+compete to acquire valuable diamond cards for points. The task is to
+interact with GenAI and teach it the intricacies of the game in order to
+refine its strategic acumen. This report delves into the methodology for
+instructing GenAI to play Diamonds and enhance its bidding strategies.
+Our ultimate aim is to equip GenAI with the skills to excel at Diamonds
+and provide code that can enable a user to play this game.
+
+Problem statement:
+
+Each player gets a suit of cards other than the diamond suit. The
+diamond cards are then shuffled and put on auction one by one. All the
+players must bid with one of their own cards face down. The banker gives
+the diamond card to the highest bid, i.e.~the bid with the most points.
+2\textless3\textless4\textless5\textless6\textless7\textless8\textless9\textless T\textless J\textless Q\textless K\textless A
+The winning player gets the points of the diamond card to their column
+in the table. If there are multiple players that have the highest bid
+with the same card, the points from the diamond card are divided equally
+among them. The player with the most points wins at the end of the game.
+
+Teaching GenAI the game:
+
+To teach GenAI the intricacies of the card game, we dived into
+understanding its rules, mechanics, and strategic nuances that govern
+the success of the game.
+
+One of the key insights was the critical role of card valuation in
+shaping bidding strategies. We recognized the significance of assigning
+point values to each card rank, with higher-ranking cards holding
+greater value in the auction process. This enabled it to make informed
+bidding decisions based on the relative strengths of the cards and the
+potential point gains from acquiring diamond cards.
+
+Furthermore, my conversation with the AI shed light on the dynamic
+nature of bidding strategies, which evolve over the course of the game
+in response to shifting circumstances and opponent behaviour. We
+recognized the need for a delicate balance between bidding aggressively
+to secure high-value diamonds and preserving valuable cards for future
+auctions. This strategic calculus, rooted in a thorough understanding of
+the game's mechanics, served as a guiding principle in GenAI's learning
+journey.
+
+Moreover, the importance of player interaction and adaptability in the
+game helps to identify recurring trends and strategies that inform
+GenAI's decision-making process. By incorporating insights from observed
+gameplay and iteratively refining its strategies, GenAI demonstrated a
+capacity to adapt and optimize its bidding approach in response to the
+evolving game dynamics.
+
+Through in-depth conversation and evaluation, we equipped GenAI with the
+knowledge and insights necessary to navigate the complexities of the
+game and develop nuanced bidding strategies. This hands-on approach,
+grounded in real-world understanding and analysis, laid the groundwork
+for GenAI's journey towards the learning of the card game.
+
+Iterating Upon Strategy:
+
+we outline the key strategies employed and the iterative process that
+culminated in the final code for the game:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Basic Bidding Tactics:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Initially, we implemented basic bidding tactics, focusing on bid
+    selection based solely on the rank of the card from the player's
+    suit.
+  \end{itemize}
+\item
+  Card Valuation and Point Assignment:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Recognizing the importance of card valuation, we introduced a system
+    for assigning point values to each card rank, with higher-ranking
+    cards receiving higher point values.
+  \end{itemize}
+\item
+  Risk Management and Adaptability:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Building upon the foundation of card valuation, we integrated risk
+    management principles into GenAI's bidding strategies, emphasizing
+    the importance of balancing aggressive bidding with prudent card
+    preservation.
+  \end{itemize}
+\item
+  Opponent Modeling and Adaptation:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Leveraging insights from observed player behavior, we implemented
+    opponent modeling techniques to analyze bidding patterns and predict
+    opponent strategies.
+  \end{itemize}
+\item
+  Endgame Tactics and Optimization:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    As the game progressed and endgame scenarios emerged, we focused on
+    developing specialized bidding tactics tailored to maximize point
+    gains in the final rounds.
+  \end{itemize}
+\end{enumerate}
+
+The iterative process of strategy development involved continual
+refinement and adjustment, informed by insights gleaned from simulated
+gameplay, analysis of opponent behavior, and strategic experimentation.
+By iterating upon strategies and incorporating learnings from each
+iteration, we navigated towards the final code for the game---a
+culmination of strategic sophistication and adaptive decision-making
+that embodied the essence of GenAI's mastery of the card game.
+
+Analysis and Conclusion:
+
+The experience of teaching GenAI the card game proved to be a
+fascinating journey into the intersection of artificial intelligence,
+strategic decision-making, and recreational gaming. Through in-depth
+exploration and analysis, we uncovered the complexities inherent in the
+game's mechanics and strategies, laying the groundwork for GenAI's
+learning and development.
+
+In conclusion, the journey of teaching GenAI the card game represents a
+compelling exploration between human expertise and artificial
+intelligence capabilities. By combining human ingenuity with AI-driven
+strategic acumen, we can unlock new possibilities for enhancing the
+competitiveness, enjoyment, and strategic depth of recreational gaming
+experiences.
+
+\end{document}
